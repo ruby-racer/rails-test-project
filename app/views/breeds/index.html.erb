@@ -1,5 +1,9 @@
-<%- @breeds.each do |breed| %>
-  <div class="dog">
-      <%= link_to  friendly_name(breed), "#{breeds_path}/#{breed.gsub('/', '-')}" %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%- @breeds.each do |breed| %>
+      <p >
+          <%= link_to  friendly_name(breed), "#{breeds_path}/#{breed.gsub('/', '-')}" %>
+      </p>
+    <%- end %>
   </div>
-<%- end %>
+</div>

@@ -12,10 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
 
-body, html {
-  background: #2D334C;
-  color: #1BE84C;
-  font-family: "Arial", sans-serif;
-}
+ body {
+  background-color: #eee !important;
+ }
