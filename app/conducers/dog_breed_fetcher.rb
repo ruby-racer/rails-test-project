@@ -1,9 +1,8 @@
 class DogBreedFetcher
-  attr_reader :breed
 
-  def initialize(name=nil)
-    @name  = breed || "random"
-    @breed = Breed.find_or_initialize_by(name: name)
+  def initialize(name = nil)
+    @name = name || "random"
+    @breed = Breed.active.find_or_initialize_by(name: name)
   end
 
   def fetch
@@ -13,15 +12,16 @@ class DogBreedFetcher
     @breed.save && @breed
   end
 
-  def self.fetch(name=nil)
+  def self.fetch(name = nil)
     name ||= "random"
     DogBreedFetcher.new(name).fetch
   end
 
-private
+  private
+
   def fetch_info
     begin
-      JSON.parse(RestClient.get("https://dog.ceo/api/breeds/image/#{ @name }").body)
+      JSON.parse(RestClient.get("https://dog.ceo/api/breed/#{@name}/images/random").body)
     rescue Object => e
       default_body
     end
@@ -29,8 +29,8 @@ private
 
   def default_body
     {
-      "status"  => "success",
-      "message" => "https://images.dog.ceo/breeds/cattledog-australian/IMG_2432.jpg"
+      "status" => "success",
+      "message" => "https://images.dog.ceo/breeds/cattledog-australian/IMG_2432.jpg",
     }
   end
 end
