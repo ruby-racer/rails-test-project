@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180709094136) do
   create_table "breeds", force: true do |t|
     t.string  "name"
     t.string  "pic_url"
-    t.boolean "to_deleted", default: false
+    t.boolean "to_delete", default: false
   end
 
   add_index "breeds", ["name"], name: "index_breeds_on_name"
