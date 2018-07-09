@@ -3,7 +3,7 @@ class DogBreedFetcher
 
   def initialize(name=nil)
     @name  = breed || "random"
-    @breed = Breed.find_or_initialize_by(name: name)
+    @breed = Breed.active.find_or_initialize_by(name: name)
   end
 
   def fetch
