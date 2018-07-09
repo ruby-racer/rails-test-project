@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+document.addEventListener("turbolinks:load", function() {
+  $('[data-back="true"]').click(function (e) {
+    e.preventDefault();
+    window.location = '/#' + window.location.pathname.split('/').pop()
+  })
+})
