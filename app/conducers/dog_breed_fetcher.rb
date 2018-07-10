@@ -1,8 +1,6 @@
 class DogBreedFetcher
-  attr_reader :breed
-
   def initialize(name=nil)
-    @name  = breed || "random"
+    @name  = name || "random"
     @breed = Breed.find_or_initialize_by(name: name)
   end
 
@@ -19,9 +17,10 @@ class DogBreedFetcher
   end
 
 private
+
   def fetch_info
     begin
-      JSON.parse(RestClient.get("https://dog.ceo/api/breeds/image/#{ @name }").body)
+      JSON.parse(RestClient.get("https://dog.ceo/api/breed/#{ @name }/images/random").body)
     rescue Object => e
       default_body
     end

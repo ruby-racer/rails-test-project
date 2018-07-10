@@ -1,9 +1,9 @@
-<div class="dog">
-
-  <h1>It's a dog</h1>
-
-  <h3><%= @breed.name.humanize %></h3>
-
-  <%= image_tag @breed.pic_url %>
-
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%- @breeds.each do |breed| %>
+      <p id="<%= urlify(breed) %>">
+          <%= link_to  friendly_name(breed), "#{breeds_path}/#{urlify(breed)}" %>
+      </p>
+    <%- end %>
+  </div>
 </div>

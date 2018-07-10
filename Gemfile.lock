@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bootstrap3-rails (3.2.0)
+      rails (>= 4.0.0)
     builder (3.2.3)
     coderay (1.1.2)
     coffee-rails (4.0.1)
@@ -131,6 +133,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap3-rails
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
@@ -148,4 +151,4 @@ RUBY VERSION
    ruby 2.1.4p265
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

@@ -38,3 +38,4 @@ gem 'spring',        group: :development
 
 gem "pry"
 gem "rest-client", "~> 2.0"
+gem 'bootstrap3-rails'

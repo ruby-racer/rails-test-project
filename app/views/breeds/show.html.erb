@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4 text-left">
+    <p>
+      <%= link_to 'Back', :back, data: { back: true } %>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <div class="text-center"> 
+      <h3 ><%= friendly_name(@breed.name) %></h3>
+      <%= image_tag @breed.pic_url, class: 'thumbnail', style: "margin: 0 auto;" %>
+    </div>
+  </div>
+</div>
